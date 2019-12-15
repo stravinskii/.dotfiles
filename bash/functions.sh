@@ -26,3 +26,27 @@ copycat() {
   cat $1 | xclip -selection clipboard
 }
 
+function lsdirs {
+    path=${1:-}
+
+    ls -d $path*/
+    #ls -ld $path*/ | awk '{print $9}'
+}
+
+function sshr {
+    hostname=$1
+    ssh root@$hostname
+}
+
+function confirm {
+    question=$1
+
+    read -r -p "$question [y/N] " response
+
+    case "$response" in
+        [yY][eE][sS]|[yY])
+            return 1;;
+        *) return 0;;
+    esac
+}
+
