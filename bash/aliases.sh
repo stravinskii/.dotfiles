@@ -1,13 +1,14 @@
-# Aliases definitions for a bash dotfile
-# @author: stravinskii
+#!/bin/bash
+#
+# Bash dotfile alias.
 
-
+alias ll="ls -l"
+alias lsd="lsdirs"
 alias screens="screen -list"
 alias sessions="screen -list"
 alias tree="tree -xarf"
 alias vim="vim -O"
 alias where="tree | grep"
-
 
 alias bashrc="
 vim $BASH_FILES \
@@ -26,4 +27,3 @@ vim -O $I3_CONFIG $I3_STATUS_CONFIG \
 alias vimrc="
 vim $VIMRC \
   && cp $VIMRC ${VIMRC}.bak"
-

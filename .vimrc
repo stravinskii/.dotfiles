@@ -1,8 +1,7 @@
 " GUI
 syntax enable
-"colorscheme koehler
-"colorscheme oceandeep
-"colorscheme molokai
+
+colorscheme cyberpunkneon
 colorscheme gruvbox
 
 set ruler
@@ -10,7 +9,8 @@ set number
 set numberwidth=2
 
 set nowrap
-set cursorline
+" Comment if using cyberpunkneon
+"set cursorline
 
 set mat=2
 set showmatch

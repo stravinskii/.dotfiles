@@ -1,7 +1,15 @@
-# Functions definitions for a bash dotfile
-# @author: stravinskii
+#!/bin/bash
+#
+# Bash dotfile functions.
 
-function session() {
+#######################################
+# Reattach to existing screen or attach to a new one with provided regex arg.
+# Arguments:
+#   Regex expression to match a previous screen session name.
+# Outputs:
+#   Writes a screen session name if matched, or arg if new session.
+#######################################
+session() {
   session_name=$1
 
   # filter screen list removing useless header, footer, and session number
@@ -12,26 +20,20 @@ function session() {
   if [ -z $session_match ];
   then
     echo "Creating session: $session_name ..."
-    sleep .5s;
+    sleep .5s
     screen -S $session_name
   else
     echo "Entering session: $session_match ..."
-    sleep .5s;
+    sleep .5s
     screen -R $session_match
   fi
 }
 
-function copycat() {
+copycat() {
   cat $1 | xclip -selection clipboard
 }
 
-function lsdirs {
-    path=${1:-}
-
-    ls -d $path*/
-}
-
-function sshr {
+sshr() {
     hostname=$1
     ssh root@$hostname
 }

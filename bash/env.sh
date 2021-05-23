@@ -1,9 +1,10 @@
-# Path definitions for a bash dotfile
-# @author: stravinskii
+#!/bin/bash
+#
+# Bash dotfile paths.
 
-function append_to_path {
+append_to_path() {
     path_to_append=$1
-    export PATH=$PATH:$path_to_append
+    export PATH=$path_to_append:$PATH
 }
 
 append_to_path "$HOME/.composer/vendor/bin"
@@ -11,4 +12,3 @@ append_to_path "$HOME/.gem/ruby/2.3.0/bin"
 append_to_path "$HOME/Development/flutter/bin"
 append_to_path "$HOME/go/bin"
 append_to_path /usr/local/mysql/bin
-
